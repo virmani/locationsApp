@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status_code: MyString
+  count: 
+  average: 1.5
+  variance: 1.5
+
+two:
+  status_code: MyString
+  count: 
+  average: 1.5
+  variance: 1.5

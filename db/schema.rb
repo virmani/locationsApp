@@ -11,12 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115071913) do
+ActiveRecord::Schema.define(:version => 20111117043407) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statistics", :force => true do |t|
+    t.string   "status_code"
+    t.integer  "count"
+    t.float    "average"
+    t.float    "variance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
