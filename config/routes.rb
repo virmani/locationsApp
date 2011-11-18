@@ -1,5 +1,6 @@
 LocationsApp::Application.routes.draw do
   resources :locations
+  resources :statistics
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

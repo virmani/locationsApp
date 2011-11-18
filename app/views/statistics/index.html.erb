@@ -1,0 +1,18 @@
+<h1>Average and Variance (grouped by status code)</h1>
+
+<table border=1>
+  <tr>
+    <th>Status Code</th>
+    <th>Average</th>
+    <th>Variance</th>
+  </tr>
+
+<% @statistics.each do |statistic| %>
+  <tr>
+    <td><%= statistic.status_code %>xx</td>
+    <td><%= statistic.average %></td>
+    <td><%= statistic.variance %></td>
+  </tr>
+<% end %>
+</table>
+
