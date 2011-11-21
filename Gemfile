@@ -6,8 +6,8 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', '1.3.4', :group => :development
-gem 'rack'
-gem 'devise'
+gem 'rack', '1.3.5'
+gem 'devise', '1.5.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
