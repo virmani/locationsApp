@@ -1,6 +1,8 @@
 LocationsApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.action_mailer.default_url_options = { :host => 'virmanilocation.heroku.com' }
+  
   config.force_ssl = true
   
   # Code is not reloaded between requests

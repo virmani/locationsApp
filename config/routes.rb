@@ -1,6 +1,10 @@
 LocationsApp::Application.routes.draw do
+  devise_for :users
+
   resources :locations
   resources :statistics
+
+  root :to => "locations#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
