@@ -4,7 +4,7 @@ LocationsApp::Application.routes.draw do
   resources :locations
   resources :statistics
 
-  root :to => "locations#index"
+  root :to => "statistics#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

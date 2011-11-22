@@ -16,7 +16,11 @@ module LocationsApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Inserting the StatusCodeLogger middleware right after the ActionDispatch::Static to make
+    # sure that all the responses are captured (even those that are caused due to exceptions being
+    # thrown from the application)
     config.middleware.insert_after ActionDispatch::Static, "StatusCodeLogger", "/locations"
+    
     config.assets.initialize_on_precompile = false
     
     # Custom directories with classes and modules you want to be autoloadable.
