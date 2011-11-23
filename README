@@ -1,1 +1,14 @@
 === Playing around with Ruby, rack middlewares, devise etc. === 
+
+Steps for deploying in development:
+1. rake db:setup	# Create the database, load the schema, and initialize with the seed data for the statistics table
+2. rails s
+
+Steps for deploying on heroku:
+1. heroku addons:add piggyback_ssl	# Needed to be able to use the *.heroku.com certificate for SSL 
+2. git push heroku master
+3. heroku rake db:setup	# Create the database, load the schema, and initialize with the seed data for the statistics table
+
+The rake middleware source can be found in lib/status_code_logger.rb. This middleware expects a table called Statistics to exist in the database before it is called. When called, it logs the moving average and variance of the response status codes grouped by their class (2xx, 4xx, etc). The current average and variance can be seen at the following URL: 
+Development: http://localhost:PORTNUM/statistics
+Production: http://<ProductionHostName>/statistics
