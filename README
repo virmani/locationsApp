@@ -22,5 +22,5 @@ The application
 - uses Devise for authentication
 - uses the *.heroku.com SSL cert for HTTPS by using the piggyback_ssl heroku addon
 
-**This is the first time I have written any code in Ruby. I could have written it in some laguage that I am already familiar with but it was just a good excuse for me to learn Ruby and Rails.
+**This is the first time I have written any code in Ruby. Initially, I planned to write it in a familiar language like Java or C# but it turned out to be a good excuse for me to learn Ruby and Rails. 
  
