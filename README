@@ -2,11 +2,11 @@ Tracking moving average and variance of response code from a web service**
  
 Steps for deploying in development:
 1. run 'rake db:setup'	# Create the database, load the schema, and initialize with the seed data for the statistics table
-2. run 'rails s'
+2. run 'rails server'
 
 Steps for deploying on heroku:
-1. run 'heroku addons:add piggyback_ssl'	# Needed to be able to use the *.heroku.com certificate for SSL
-2. Change the config.action_mailer.default_url_options in config/environments/production.rb to the heroku hostname that you are deploying to  
+1. run 'heroku addons:add piggyback_ssl'	# Needed to be able to use the *.heroku.com certificate for SSL.
+2. change the config.action_mailer.default_url_options in config/environments/production.rb to the heroku hostname that you are deploying to.  
 3. run 'git push heroku master'
 4. run 'heroku rake db:setup'	# Create the database, load the schema, and initialize with the seed data for the statistics table
 
@@ -14,13 +14,13 @@ The application
 - uses a rake middleware to log the moving average and variance of HTTP response status codes grouped by class (2xx, 3xx etc). The middleware
 	- expects a table called Statistics to exist in the database before it can be used.
 	- is configured in the config (in config/application.rb)
-	- accepts variable number of arguments. Each argument adds a path to the list of URL paths from which the middleware tracks the response status codes to calculate the average and variance as explained above.
-	- source can be found in lib/status_code_logger.rb.  
+	- accepts the Url path as an argument, responses from which are to be included in the calculation of average and variance.
+  	- source can be found in lib/status_code_logger.rb.  
 - shows the current average and variance at the following URL: 
 	- Development: http://localhost:PORTNUM/statistics
 	- Production: http://<ProductionHostName>/statistics
 - uses Devise for authentication
 - uses the *.heroku.com SSL cert for HTTPS by using the piggyback_ssl heroku addon
 
-**This is the first time I have written any code in Ruby. Initially, I planned to write it in a familiar language like Java or C# but it turned out to be a good excuse for me to learn Ruby and Rails. 
+**This is the first time I have written any code in Ruby. It was a good excuse for me to learn Ruby and Rails.  
  
